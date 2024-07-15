@@ -14,7 +14,7 @@ interface FooterProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 export function Footer({ ...props }: FooterProps) {
   return (
     <footer {...props} className={twMerge("w-full p-8", props.className)}>
-      <ul className="flex items-center justify-between">
+      <ul className="flex items-center justify-between shadow-xl p-4 rounded-full">
         <li>
           <Link href="/dashboard">
             <Home />
@@ -25,14 +25,16 @@ export function Footer({ ...props }: FooterProps) {
         </li>
         <li className="bg-indigo-500 p-2 rounded-full text-white">
           <Link href="/dashboard/camera">
-            <Camera className="h-8 w-8" />
+            <Camera />
           </Link>
         </li>
         <li>
           <Trophy />
         </li>
         <li>
-          <User />
+          <Link href="/dashboard/profile">
+            <User />
+          </Link>
         </li>
       </ul>
     </footer>
